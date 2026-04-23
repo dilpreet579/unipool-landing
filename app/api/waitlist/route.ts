@@ -117,7 +117,7 @@ export async function POST(req: NextRequest) {
   const { email } = parsed.data;
   const timestamp = new Date().toISOString();
 
-  // 4. Send both emails in parallel — succeed if at least one works
+  // 4. Run all three in parallel: owner notification, subscriber confirmation, contact creation
   const [ownerOk, confirmOk] = await Promise.all([
     // Notify owner(s)
     ownerEmails.length > 0
@@ -174,7 +174,7 @@ export async function POST(req: NextRequest) {
               <p style="margin: 0 0 16px; font-size: 14px; color: #71717a; line-height: 1.5;">
                 The app is live and free to download right now on Android.
               </p>
-              <a href="https://unipool.dev/downloads/unipool.apk"
+              <a href="https://www.unipool.dev/downloads/unipool.apk"
                 style="display: inline-block; background: #09090b; color: #fff; font-size: 14px;
                        font-weight: 700; padding: 10px 20px; border-radius: 100px; text-decoration: none;">
                 Download APK
@@ -189,6 +189,25 @@ export async function POST(req: NextRequest) {
       })
       .then(({ error }) => !error)
       .catch(() => false),
+
+    resend.contacts
+      .create({ email, unsubscribed: false })
+      .then(({ error }) => {
+        if (error) {
+          // Duplicate is fine — they're already a contact
+          const isDuplicate =
+            error.message?.toLowerCase().includes("already exists") ||
+            error.name === "validation_error";
+          if (!isDuplicate) {
+            console.warn("[waitlist] contacts.create error:", error);
+          }
+        }
+        return true; // contact step never blocks overall success
+      })
+      .catch((err) => {
+        console.warn("[waitlist] contacts.create failed:", err);
+        return true; // still non-blocking
+      }),
   ]);
 
   if (!ownerOk && !confirmOk) {
