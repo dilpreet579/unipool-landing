@@ -20,6 +20,8 @@ export const metadata: Metadata = {
   description: "Campus Rides, Simplified",
   icons: {
     icon: "/images/icon.png",
+    shortcut: "/images/icon.png",
+    apple: "/images/icon.png",
   },
 };
 

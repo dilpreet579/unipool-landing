@@ -7,8 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { ShieldCheck, Zap, HandCoins, Users, Plus } from "lucide-react";
 import { Footer } from "@/components/Footer";
-
-const APK_PATH = "/downloads/unipool.apk";
+import { APK_URL, getApkAbsoluteUrl } from "@/lib/apk";
 
 export default function Home() {
   const [qrValue, setQrValue] = useState("");
@@ -72,15 +71,14 @@ export default function Home() {
                 size="lg"
                 className="w-full sm:w-auto bg-white text-zinc-950 hover:bg-zinc-200 border-0 font-bold px-8 h-14 text-lg rounded-full shadow-2xl"
               >
-                <a href={APK_PATH} download>
+                <a href={APK_URL} download>
                   Download APK
                 </a>
               </Button>
               <Popover
                 onOpenChange={(open) => {
-                  if (open && !qrValue) {
-                    setQrValue(new URL(APK_PATH, window.location.href).toString());
-                  }
+                  if (!open) return;
+                  setQrValue(getApkAbsoluteUrl(window.location.origin));
                 }}
               >
                 <PopoverTrigger asChild>
@@ -245,7 +243,7 @@ export default function Home() {
                  size="lg"
                  className="w-full sm:w-auto bg-zinc-900 text-white hover:bg-zinc-800 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-200 rounded-full h-14 px-8 text-lg font-bold shadow-lg"
                >
-                 <a href={APK_PATH} download>
+                 <a href={APK_URL} download>
                    Download APK
                  </a>
                </Button>

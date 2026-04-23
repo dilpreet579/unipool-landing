@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Twitter, Instagram, Linkedin } from "lucide-react";
 
 export function Footer() {
@@ -12,7 +13,13 @@ export function Footer() {
           {/* Column 1: Brand */}
           <div className="col-span-2 md:col-span-1 space-y-4">
             <div className="flex items-center gap-2">
-              <img src="/images/icon.png" alt="UniPool Logo" className="h-8 w-8 object-contain" />
+              <Image
+                src="/images/icon.png"
+                alt="UniPool Logo"
+                width={32}
+                height={32}
+                className="h-8 w-8 object-contain"
+              />
               <h2 className="text-2xl font-bold text-zinc-900 dark:text-white tracking-tight">
                 UniPool
               </h2>
@@ -29,10 +36,11 @@ export function Footer() {
           <div className="space-y-4">
             <h3 className="font-bold text-zinc-900 dark:text-white">Product</h3>
             <ul className="space-y-2 text-sm">
-              <li><Link href="#features" className="text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white transition-colors">Features</Link></li>
-              <li><Link href="#how-it-works" className="text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white transition-colors">How it works</Link></li>
-              <li><Link href="#download" className="text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white transition-colors">Download APK</Link></li>
-              <li><Link href="#faq" className="text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white transition-colors">FAQ</Link></li>
+              <li><Link href="/#features" className="text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white transition-colors">Features</Link></li>
+              <li><Link href="/#how-it-works" className="text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white transition-colors">How it works</Link></li>
+              <li><Link href="/#download" className="text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white transition-colors">Download APK</Link></li>
+              <li><Link href="/#faq" className="text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white transition-colors">FAQ</Link></li>
+              <li><Link href="/contact" className="text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white transition-colors">Contact</Link></li>
             </ul>
           </div>
 

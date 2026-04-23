@@ -1,13 +1,13 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import { useState } from "react";
 import { ModeToggle } from "@/components/ModeToggle";
-
-const APK_PATH = "/downloads/unipool.apk";
+import { APK_URL } from "@/lib/apk";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,6 +16,7 @@ export function Navbar() {
     { href: "/#features", label: "Features" },
     { href: "/#how-it-works", label: "How it works" },
     { href: "/#faq", label: "FAQ" },
+    { href: "/contact", label: "Contact" },
   ];
 
   return (
@@ -24,10 +25,12 @@ export function Navbar() {
         
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 group">
-          <img 
-            src="/images/icon.png" 
-            alt="UniPool Logo" 
-            className="h-8 w-8 object-contain transition-transform duration-200 group-hover:scale-110" 
+          <Image
+            src="/images/icon.png"
+            alt="UniPool Logo"
+            width={32}
+            height={32}
+            className="h-8 w-8 object-contain transition-transform duration-200 group-hover:scale-110"
           />
           <span className="font-extrabold tracking-tight text-2xl text-zinc-900 dark:text-white">
             Uni<span>Pool</span>
@@ -55,7 +58,7 @@ export function Navbar() {
           <div className="h-6 w-px bg-zinc-200 dark:bg-zinc-800 mx-1" />
           
           <Button asChild className="rounded-full bg-zinc-900 text-white hover:bg-zinc-800 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-200 shadow-lg">
-             <a href={APK_PATH} download>
+             <a href={APK_URL} download>
                Download APK
              </a>
           </Button>
@@ -74,11 +77,13 @@ export function Navbar() {
                 <SheetContent side="right" className="w-[300px] sm:w-[400px]">
                     <SheetHeader className="text-left border-b pb-4 mb-4">
                         <SheetTitle className="flex items-center gap-2">
-                            <img 
-                                src="/images/icon.png" 
-                                alt="UniPool Logo" 
-                                className="h-6 w-6 object-contain" 
-                            />
+                        <Image
+                          src="/images/icon.png"
+                          alt="UniPool Logo"
+                          width={24}
+                          height={24}
+                          className="h-6 w-6 object-contain"
+                        />
                             <span className="font-bold">UniPool</span>
                         </SheetTitle>
                     </SheetHeader>
@@ -98,7 +103,7 @@ export function Navbar() {
 
                     <div className="mt-auto pt-8 border-t flex flex-col gap-4">
                         <Button asChild className="w-full rounded-xl bg-zinc-900 text-white hover:bg-zinc-800 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-200" size="lg">
-                        <a href={APK_PATH} download onClick={() => setIsOpen(false)}>
+                        <a href={APK_URL} download onClick={() => setIsOpen(false)}>
                           Download APK
                         </a>
                         </Button>
