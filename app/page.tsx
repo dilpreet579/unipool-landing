@@ -39,6 +39,33 @@ export default function Home() {
 
   return (
     <div className="min-h-[calc(100vh-64px)] bg-zinc-50 dark:bg-zinc-950 flex flex-col transition-colors">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            name: "UniPool",
+            applicationCategory: "TransportationApplication",
+            operatingSystem: "Android",
+            description:
+              "UniPool connects university students for safe, affordable carpooling. Zero platform fees, university email verified.",
+            offers: {
+              "@type": "Offer",
+              price: "0",
+              priceCurrency: "INR",
+            },
+            url: "https://www.unipool.dev",
+            downloadUrl: "https://www.unipool.dev/downloads/unipool.apk",
+            screenshot: "https://www.unipool.dev/og-image.png",
+            publisher: {
+              "@type": "Organization",
+              name: "UniPool",
+              url: "https://www.unipool.dev",
+            },
+          }),
+        }}
+      />
       <main className="flex-1 p-4 md:p-8 space-y-12 overflow-y-auto w-full">
 
         {/* Hero Section */}
