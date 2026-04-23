@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { ShieldCheck, Zap, HandCoins, Users, Plus } from "lucide-react";
 import { Footer } from "@/components/Footer";
+import { WaitlistForm } from "@/components/WaitlistForm";
 import { APK_URL, HAS_APK_URL, getApkAbsoluteUrl } from "@/lib/apk";
 
 export default function Home() {
@@ -48,11 +49,11 @@ export default function Home() {
               loop
               muted
               playsInline
-              className="w-full h-full object-cover opacity-60 md:opacity-80"
+              className="w-full h-full object-cover opacity-80 md:opacity-100"
             >
               <source src="/videos/hero-car.mp4" type="video/mp4" />
             </video>
-            <div className="absolute inset-0 bg-zinc-950/40 md:bg-zinc-950/20" />
+            <div className="absolute inset-0 bg-zinc-950/20 md:bg-zinc-950/10" />
           </div>
           <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-zinc-950 from-40% md:from-30% via-zinc-950/80 via-70% md:via-60% to-transparent z-1 pointer-events-none" />
 
@@ -250,35 +251,51 @@ export default function Home() {
 
         {/* CTA Section */}
         <div className="max-w-6xl mx-auto w-full px-4 sm:px-0">
-          <div id="download" className="py-12 sm:py-16 text-center space-y-6 sm:space-y-8 bg-zinc-100 dark:bg-zinc-900 rounded-3xl p-6 sm:p-8 shadow-sm border border-zinc-200 dark:border-zinc-800">
+          <div id="download" className="py-12 sm:py-16 text-center space-y-8 bg-zinc-100 dark:bg-zinc-900 rounded-3xl p-6 sm:p-12 shadow-sm border border-zinc-200 dark:border-zinc-800">
+            
+            {/* APK Download */}
             <div className="space-y-4 max-w-2xl mx-auto">
               <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold tracking-tight text-zinc-900 dark:text-white pb-2">Ready to ride smarter?</h2>
-              <p className="text-lg sm:text-xl text-zinc-600 dark:text-zinc-400">Download the APK now. Play Store & App Store versions coming soon.</p>
-            </div>
-            <div className="flex flex-col sm:flex-row justify-center gap-4 pt-2">
-              {HAS_APK_URL ? (
-                <Button
-                  asChild
-                  size="lg"
-                  className="w-full sm:w-auto bg-zinc-900 text-white hover:bg-zinc-800 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-200 rounded-full h-14 px-8 text-lg font-bold shadow-lg"
-                >
-                  <a href={APK_URL} download>
+              <p className="text-lg sm:text-xl text-zinc-600 dark:text-zinc-400">Download the APK now. Available on Android — free forever.</p>
+              <div className="flex justify-center pt-2">
+                {HAS_APK_URL ? (
+                  <Button
+                    asChild
+                    size="lg"
+                    className="bg-zinc-900 text-white hover:bg-zinc-800 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-200 rounded-full h-14 px-10 text-lg font-bold shadow-lg"
+                  >
+                    <a href={APK_URL} download>
+                      Download APK
+                    </a>
+                  </Button>
+                ) : (
+                  <Button
+                    size="lg"
+                    disabled
+                    className="bg-zinc-900 text-white dark:bg-zinc-50 dark:text-zinc-900 rounded-full h-14 px-10 text-lg font-bold shadow-lg"
+                  >
                     Download APK
-                  </a>
-                </Button>
-              ) : (
-                <Button
-                  size="lg"
-                  disabled
-                  className="w-full sm:w-auto bg-zinc-900 text-white dark:bg-zinc-50 dark:text-zinc-900 rounded-full h-14 px-8 text-lg font-bold shadow-lg"
-                >
-                  Download APK
-                </Button>
-              )}
-              <Button size="lg" variant="outline" className="w-full sm:w-auto rounded-full h-14 px-8 text-lg font-bold border-zinc-200 dark:border-zinc-800 dark:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800">
-                Join the waitlist
-              </Button>
+                  </Button>
+                )}
+              </div>
             </div>
+
+            {/* Divider */}
+            <div className="flex items-center gap-4 max-w-sm mx-auto">
+              <div className="flex-1 h-px bg-zinc-200 dark:bg-zinc-700" />
+              <span className="text-xs font-medium text-zinc-400 dark:text-zinc-500 uppercase tracking-widest">or</span>
+              <div className="flex-1 h-px bg-zinc-200 dark:bg-zinc-700" />
+            </div>
+
+            {/* Waitlist */}
+            <div className="space-y-4 max-w-xl mx-auto">
+              <div className="space-y-1">
+                <h3 className="text-xl sm:text-2xl font-bold text-zinc-900 dark:text-white">Get notified for Play Store & App Store</h3>
+                <p className="text-zinc-500 dark:text-zinc-400 text-sm sm:text-base">Join the waitlist and be first to know when we launch.</p>
+              </div>
+              <WaitlistForm />
+            </div>
+
           </div>
         </div>
 
