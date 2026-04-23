@@ -52,7 +52,10 @@ The page allows students to:
 
 ## 📱 APK Distribution
 
-The Android APK is served as a static file at `/downloads/unipool.apk`. Drop an updated APK into `public/downloads/` to serve a new version — no code changes required.
+The Android APK is hosted externally (recommended: **GitHub Releases**) and the landing page points to it via the `NEXT_PUBLIC_APK_URL` environment variable.
+
+Example:
+`NEXT_PUBLIC_APK_URL=https://github.com/<owner>/<repo>/releases/latest/download/unipool.apk`
 
 A QR code popover on the hero section lets desktop visitors instantly send the download link to their phone.
 

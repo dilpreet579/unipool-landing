@@ -7,7 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { ShieldCheck, Zap, HandCoins, Users, Plus } from "lucide-react";
 import { Footer } from "@/components/Footer";
-import { APK_URL, getApkAbsoluteUrl } from "@/lib/apk";
+import { APK_URL, HAS_APK_URL, getApkAbsoluteUrl } from "@/lib/apk";
 
 export default function Home() {
   const [qrValue, setQrValue] = useState("");
@@ -66,15 +66,25 @@ export default function Home() {
             </div>
 
             <div className="pt-2 flex flex-col sm:flex-row gap-4">
-              <Button
-                asChild
-                size="lg"
-                className="w-full sm:w-auto bg-white text-zinc-950 hover:bg-zinc-200 border-0 font-bold px-8 h-14 text-lg rounded-full shadow-2xl"
-              >
-                <a href={APK_URL} download>
+              {HAS_APK_URL ? (
+                <Button
+                  asChild
+                  size="lg"
+                  className="w-full sm:w-auto bg-white text-zinc-950 hover:bg-zinc-200 border-0 font-bold px-8 h-14 text-lg rounded-full shadow-2xl"
+                >
+                  <a href={APK_URL} download>
+                    Download APK
+                  </a>
+                </Button>
+              ) : (
+                <Button
+                  size="lg"
+                  disabled
+                  className="w-full sm:w-auto bg-white text-zinc-950 border-0 font-bold px-8 h-14 text-lg rounded-full shadow-2xl"
+                >
                   Download APK
-                </a>
-              </Button>
+                </Button>
+              )}
               <Popover
                 onOpenChange={(open) => {
                   if (!open) return;
@@ -85,7 +95,8 @@ export default function Home() {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="hidden md:inline-flex w-full sm:w-auto bg-transparent text-white hover:text-white border-white/20 hover:bg-white/10 font-bold px-8 h-14 text-lg rounded-full"
+                    disabled={!HAS_APK_URL}
+                    className="hidden md:inline-flex w-full sm:w-auto bg-transparent text-white hover:text-white border-white/20 hover:bg-white/10 font-bold px-8 h-14 text-lg rounded-full disabled:opacity-50"
                   >
                     Scan QR Code
                   </Button>
@@ -238,15 +249,25 @@ export default function Home() {
               <p className="text-lg sm:text-xl text-zinc-600 dark:text-zinc-400">Download the APK now. Play Store & App Store versions coming soon.</p>
             </div>
             <div className="flex flex-col sm:flex-row justify-center gap-4 pt-2">
-               <Button
-                 asChild
-                 size="lg"
-                 className="w-full sm:w-auto bg-zinc-900 text-white hover:bg-zinc-800 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-200 rounded-full h-14 px-8 text-lg font-bold shadow-lg"
-               >
-                 <a href={APK_URL} download>
+               {HAS_APK_URL ? (
+                 <Button
+                   asChild
+                   size="lg"
+                   className="w-full sm:w-auto bg-zinc-900 text-white hover:bg-zinc-800 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-200 rounded-full h-14 px-8 text-lg font-bold shadow-lg"
+                 >
+                   <a href={APK_URL} download>
+                     Download APK
+                   </a>
+                 </Button>
+               ) : (
+                 <Button
+                   size="lg"
+                   disabled
+                   className="w-full sm:w-auto bg-zinc-900 text-white dark:bg-zinc-50 dark:text-zinc-900 rounded-full h-14 px-8 text-lg font-bold shadow-lg"
+                 >
                    Download APK
-                 </a>
-               </Button>
+                 </Button>
+               )}
                <Button size="lg" variant="outline" className="w-full sm:w-auto rounded-full h-14 px-8 text-lg font-bold border-zinc-200 dark:border-zinc-800 dark:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800">
                  Join the waitlist
                </Button>

@@ -7,7 +7,7 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/co
 import { Menu } from "lucide-react";
 import { useState } from "react";
 import { ModeToggle } from "@/components/ModeToggle";
-import { APK_URL } from "@/lib/apk";
+import { APK_URL, HAS_APK_URL } from "@/lib/apk";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -56,12 +56,18 @@ export function Navbar() {
         <div className="hidden md:flex items-center gap-3">
           <ModeToggle />
           <div className="h-6 w-px bg-zinc-200 dark:bg-zinc-800 mx-1" />
-          
-          <Button asChild className="rounded-full bg-zinc-900 text-white hover:bg-zinc-800 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-200 shadow-lg">
-             <a href={APK_URL} download>
-               Download APK
-             </a>
-          </Button>
+
+          {HAS_APK_URL ? (
+            <Button asChild className="rounded-full bg-zinc-900 text-white hover:bg-zinc-800 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-200 shadow-lg">
+              <a href={APK_URL} download>
+                Download APK
+              </a>
+            </Button>
+          ) : (
+            <Button disabled className="rounded-full bg-zinc-900 text-white dark:bg-zinc-50 dark:text-zinc-900 shadow-lg">
+              Download APK
+            </Button>
+          )}
         </div>
 
         {/* Mobile Menu */}
@@ -102,11 +108,21 @@ export function Navbar() {
                     </div>
 
                     <div className="mt-auto pt-8 border-t flex flex-col gap-4">
-                        <Button asChild className="w-full rounded-xl bg-zinc-900 text-white hover:bg-zinc-800 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-200" size="lg">
-                        <a href={APK_URL} download onClick={() => setIsOpen(false)}>
-                          Download APK
-                        </a>
-                        </Button>
+                        {HAS_APK_URL ? (
+                          <Button asChild className="w-full rounded-xl bg-zinc-900 text-white hover:bg-zinc-800 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-200" size="lg">
+                            <a href={APK_URL} download onClick={() => setIsOpen(false)}>
+                              Download APK
+                            </a>
+                          </Button>
+                        ) : (
+                          <Button
+                            disabled
+                            className="w-full rounded-xl bg-zinc-900 text-white dark:bg-zinc-50 dark:text-zinc-900"
+                            size="lg"
+                          >
+                            Download APK
+                          </Button>
+                        )}
                     </div>
                 </SheetContent>
             </Sheet>
