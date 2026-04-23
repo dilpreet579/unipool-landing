@@ -9,8 +9,10 @@ import { ShieldCheck, Zap, HandCoins, Users, Plus } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { WaitlistForm } from "@/components/WaitlistForm";
 import { APK_URL, HAS_APK_URL, getApkAbsoluteUrl } from "@/lib/apk";
+import { useOS } from "@/hooks/use-os";
 
 export default function Home() {
+  const os = useOS();
   const [qrValue, setQrValue] = useState("");
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
@@ -102,7 +104,15 @@ export default function Home() {
             </div>
 
             <div className="pt-2 flex flex-col sm:flex-row gap-4">
-              {HAS_APK_URL ? (
+              {os === "ios" ? (
+                <Button
+                  asChild
+                  size="lg"
+                  className="w-full sm:w-auto bg-white text-zinc-950 hover:bg-zinc-200 border-0 font-bold px-8 h-14 text-lg rounded-full shadow-2xl"
+                >
+                  <a href="#waitlist">Join iOS Waitlist</a>
+                </Button>
+              ) : HAS_APK_URL ? (
                 <Button
                   asChild
                   size="lg"
@@ -134,7 +144,7 @@ export default function Home() {
                     disabled={!HAS_APK_URL}
                     className="hidden md:inline-flex w-full sm:w-auto bg-transparent text-white hover:text-white border-white/20 hover:bg-white/10 font-bold px-8 h-14 text-lg rounded-full disabled:opacity-50"
                   >
-                    Scan QR Code
+                    On Desktop? Scan QR Code
                   </Button>
                 </PopoverTrigger>
                 <PopoverContent align="start" className="w-80">
@@ -315,7 +325,7 @@ export default function Home() {
             </div>
 
             {/* Waitlist */}
-            <div className="space-y-4 max-w-xl mx-auto">
+            <div id="waitlist" className="space-y-4 max-w-xl mx-auto">
               <div className="space-y-1">
                 <h3 className="text-xl sm:text-2xl font-bold text-zinc-900 dark:text-white">Get notified for Play Store & App Store</h3>
                 <p className="text-zinc-500 dark:text-zinc-400 text-sm sm:text-base">Join the waitlist and be first to know when we launch.</p>
