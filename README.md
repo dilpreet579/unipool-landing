@@ -1,5 +1,5 @@
 # UniPool — Landing Page
-> **Campus rides, without the hassle.** — The official marketing and download landing page for the UniPool mobile application.
+> **Campus rides, without the hassle.** — The official page for the UniPool mobile application.
 
 ## 📌 Overview
 
