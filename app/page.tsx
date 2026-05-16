@@ -10,6 +10,7 @@ import { Footer } from "@/components/Footer";
 import { WaitlistForm } from "@/components/WaitlistForm";
 import { AppPreview } from "@/components/AppPreview";
 import { Features } from "@/components/Features";
+import { OfficialLaunch } from "@/components/OfficialLaunch";
 import { APK_URL, HAS_APK_URL, getApkAbsoluteUrl } from "@/lib/apk";
 import { useOS } from "@/hooks/use-os";
 
@@ -200,7 +201,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Institutional Trust Section */}
+        {/* About the Project */}
         <div className="max-w-6xl mx-auto w-full">
           <div className="rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-6 md:p-10 space-y-8 shadow-sm">
             <div className="space-y-2 max-w-2xl">
@@ -269,6 +270,9 @@ export default function Home() {
 
         {/* App Preview */}
         <AppPreview />
+
+        {/* Official Launch */}
+        <OfficialLaunch />
 
         {/* FAQ Area */}
         <div id="faq" className="py-12 max-w-4xl mx-auto space-y-8 w-full">
