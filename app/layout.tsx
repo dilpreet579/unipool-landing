@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
 
   title: {
-    default: "UniPool | Safe, affordable rides for students & staff",
+    default: "UniPool | Ride Sharing for students & staff",
     template: "%s | UniPool",
   },
   description:
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: BASE_URL,
     siteName: "UniPool",
-    title: "UniPool — Ride Sharing for University Students",
+    title: "UniPool - Ride Sharing for students & staff",
     description:
       "UniPool helps students, faculty, and staff at NIT Delhi coordinate and share rides — find travel companions, split cab or auto fares, and travel safely within the campus community.",
     images: [
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "UniPool — Ride sharing for university students, launched at NIT Delhi.",
+        alt: "UniPool - Ride sharing for students & staff, launched at NIT Delhi.",
       },
     ],
   },
