@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     template: "%s | UniPool",
   },
   description:
-    "UniPool lets university students share rides to and from campus. Launched at NIT Delhi. Free Android APK available now. Play Store and App Store versions coming soon.",
+    "UniPool helps students, faculty, and staff at NIT Delhi coordinate and share rides - split cab and auto fares, find travel companions, and get around safely. Free Android APK. No platform fees.",
   keywords: [
     "carpooling",
     "university students",
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     siteName: "UniPool",
     title: "UniPool — Ride Sharing for University Students",
     description:
-      "UniPool lets university students share rides to and from campus. Launched at NIT Delhi. Free Android APK available now. No platform fees.",
+      "UniPool helps students, faculty, and staff at NIT Delhi coordinate and share rides — find travel companions, split cab or auto fares, and travel safely within the campus community.",
     images: [
       {
         url: "/og-image.png",
@@ -84,7 +84,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "UniPool — Ride Sharing for University Students",
     description:
-      "UniPool lets university students share rides to and from campus. Free to download. No platform fees.",
+      "Coordinate shared rides with your campus community. Split cab and auto fares, find travel companions, and travel safely. Free to download.",
     images: ["/og-image.png"],
   },
 

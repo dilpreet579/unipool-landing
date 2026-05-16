@@ -8,6 +8,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { ShieldCheck, Zap, HandCoins, Users, Plus, Heart, MessageSquare } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { WaitlistForm } from "@/components/WaitlistForm";
+import { AppPreview } from "@/components/AppPreview";
 import { APK_URL, HAS_APK_URL, getApkAbsoluteUrl } from "@/lib/apk";
 import { useOS } from "@/hooks/use-os";
 
@@ -22,20 +23,24 @@ export default function Home() {
       answer: "UniPool is open to students, faculty, and staff at participating universities. You register with your institutional email address, which we verify before giving you access. That one step is what keeps the community limited to people from your campus."
     },
     {
-      question: "Is there any charge to use the app?",
-      answer: "No. The app is free to download and there are no platform fees. The driver sets a fare to cover fuel costs, and the passenger pays that amount directly. UniPool does not take any cut from the transaction."
+      question: "Do I need to own a vehicle to use UniPool?",
+      answer: "No. Most students use UniPool to find others travelling the same way and share a cab, auto, or Ola/Uber together. You don't need a vehicle, you just need to be heading somewhere. Faculty and staff may also use the platform for traditional carpooling in personal vehicles."
+    },
+    {
+      question: "How does fare splitting work?",
+      answer: "The person who creates the ride sets the total fare or per-seat amount. Everyone joining shares that cost equally. UniPool does not take any cut, the amount you see is exactly what you pay."
     },
     {
       question: "How do I install the APK on my Android phone?",
       answer: "Download the APK file from this page and open it on your Android device. Your phone may ask you to allow installation from unknown sources — just tap Allow. The whole thing takes under a minute. If you're on iOS, you can join the waitlist and we'll notify you when the App Store version is ready."
     },
     {
-      question: "How do I know it's safe to share a ride with someone?",
-      answer: "Everyone on the platform is a verified member of your institution — students, faculty, or staff. Profiles are visible to all community members, rides are rated after completion, and all coordination happens through the in-app chat. There is also a Pink Mode (women-only ride option) available for additional comfort."
+      question: "How do I know it's safe to travel with someone?",
+      answer: "Everyone on the platform is a verified member of your institution - students, faculty, or staff. Profiles are visible to all community members, trips are rated after completion, and all coordination happens through the in-app chat, so there's a clear record. There is also a Pink Mode (women-only option) available."
     },
     {
       question: "What is Pink Mode?",
-      answer: "Pink Mode lets women request or offer rides exclusively among women on the platform. It's a filter within the app that any woman can use when posting or searching for a ride."
+      answer: "Pink Mode is a filter that lets women coordinate shared rides exclusively with other women on the platform. You can use it whether you're looking for a ride or posting one."
     },
     {
       question: "When will the Google Play Store and Apple App Store versions be available?",
@@ -59,7 +64,7 @@ export default function Home() {
             applicationCategory: "TransportationApplication",
             operatingSystem: "Android",
             description:
-              "UniPool is a campus ride-sharing platform for students, faculty, and staff. Officially launched at NIT Delhi. Free Android APK. No platform fees.",
+              "UniPool helps the NIT Delhi campus community coordinate and share rides - split cab and auto fares, find travel companions, and get around safely. Free Android APK. No platform fees.",
             offers: {
               "@type": "Offer",
               price: "0",
@@ -106,7 +111,7 @@ export default function Home() {
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-200 to-zinc-500">your campus community.</span>
               </h1>
               <p className="text-zinc-300 text-base sm:text-lg max-w-lg">
-                A ride-sharing app for NIT Delhi — find a ride to campus, or offer your empty seats to colleagues. Split the cost, travel safely.
+                Find people heading your way, share a cab or auto together, and split the fare. No vehicle needed - just a destination.
               </p>
               <p className="text-sm text-zinc-500">Free · Verified members only · Android</p>
             </div>
@@ -203,7 +208,7 @@ export default function Home() {
                 Built at NIT Delhi, for NIT Delhi.
               </h2>
               <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                UniPool helps students, faculty, and staff find and share rides to and from campus — splitting fuel costs and avoiding overpaying for autos and cabs. It is a campus project developed by students of the Department of Computer Science &amp; Engineering at NIT Delhi, officially inaugurated at the Director&apos;s office and publicly recognised by the official NIT Delhi LinkedIn handle.
+                UniPool helps the campus community coordinate shared travel - students find others going the same way and share a cab, auto, or Ola/Uber, splitting the fare between them. It is a campus project developed by students of the Department of Computer Science &amp; Engineering at NIT Delhi.
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2 border-t border-zinc-100 dark:border-zinc-800">
@@ -238,25 +243,23 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {[
-              { icon: Zap, title: "Find Rides Near You", desc: "See rides starting within 5 km of your location. Filter by time, price, or use Pink Mode to find women-only rides." },
-              { icon: MessageSquare, title: "Chat Inside the App", desc: "Message your driver or co-passengers directly in the app. No need to share personal phone numbers." },
-              { icon: ShieldCheck, title: "Verified Members Only", desc: "Everyone signs up with an institutional email. You're only ever sharing rides with verified students, faculty, or staff from your campus." },
-              { icon: HandCoins, title: "Driver Sets the Price", desc: "The driver sets a fare to cover fuel. You see the exact amount before requesting — no hidden charges, no surge pricing." },
-              { icon: Heart, title: "Pink Mode", desc: "A dedicated option for women to find or offer rides exclusively among women on the platform. Available as a filter when posting or searching." },
-              { icon: Users, title: "Open to the Whole Campus", desc: "Not just students — faculty and institute staff can register and use UniPool too, keeping the community broad and useful." }
+              { icon: Zap, title: "Find Travel Companions", desc: "See who's heading your way - to the metro, station, airport, or anywhere off campus. Filter by time or fare." },
+              { icon: MessageSquare, title: "Coordinate Over Chat", desc: "Sort out pickup points and timings in the app. No need to share personal phone numbers." },
+              { icon: ShieldCheck, title: "Verified Members Only", desc: "Everyone uses an institutional email. You only ever travel with verified students, faculty, or staff." },
+              { icon: HandCoins, title: "Split the Fare Fairly", desc: "The organiser sets a per-seat amount. You see it before joining - no surprises, no platform cut." },
+              { icon: Heart, title: "Pink Mode", desc: "Women can coordinate trips exclusively with other women - available as a filter when posting or searching." },
+              { icon: Users, title: "Open to the Whole Campus", desc: "Students, faculty, and staff can all use UniPool. More members means easier ride matching." }
             ].map((f, i) => (
-              <Card key={i} className="rounded-3xl shadow-sm border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900">
-                <CardHeader>
-                  <div className="bg-zinc-100 dark:bg-zinc-800 w-12 h-12 rounded-full flex items-center justify-center mb-4">
-                    <f.icon className="w-6 h-6 text-zinc-900 dark:text-white" />
+              <Card key={i} className="rounded-2xl shadow-sm border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900">
+                <div className="p-5 space-y-3">
+                  <div className="bg-zinc-100 dark:bg-zinc-800 w-9 h-9 rounded-full flex items-center justify-center">
+                    <f.icon className="w-4 h-4 text-zinc-900 dark:text-white" />
                   </div>
-                  <CardTitle className="text-xl">{f.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">{f.desc}</p>
-                </CardContent>
+                  <p className="font-semibold text-sm text-zinc-900 dark:text-white">{f.title}</p>
+                  <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">{f.desc}</p>
+                </div>
               </Card>
             ))}
           </div>
@@ -281,17 +284,20 @@ export default function Home() {
               </div>
               <div className="space-y-4">
                 <p className="text-5xl font-black text-white/20">02</p>
-                <h3 className="text-xl font-bold">Find a ride or offer one</h3>
-                <p className="text-zinc-400">Look for rides heading your way, or post your own route with a seat count and fare. Takes under two minutes to set up.</p>
+                <h3 className="text-xl font-bold">Post a trip or join one</h3>
+                <p className="text-zinc-400">Heading to the metro, station, or anywhere nearby? Post your trip and invite others going the same way, or join a trip someone else has already posted.</p>
               </div>
               <div className="space-y-4">
                 <p className="text-5xl font-black text-white/20">03</p>
-                <h3 className="text-xl font-bold">Request, confirm, and go</h3>
-                <p className="text-zinc-400">Send a ride request, sort out details over in-app chat, and head out together. Rate each other once you arrive.</p>
+                <h3 className="text-xl font-bold">Coordinate, travel, split</h3>
+                <p className="text-zinc-400">Agree on a pickup point over in-app chat, book the cab or auto together, and split the fare equally. Rate the experience once you arrive.</p>
               </div>
             </div>
           </div>
         </div>
+
+        {/* App Preview */}
+        <AppPreview />
 
         {/* FAQ Area */}
         <div id="faq" className="py-12 max-w-4xl mx-auto space-y-8 w-full">
