@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
 
   title: {
-    default: "UniPool | Ride Sharing for University Students",
+    default: "UniPool | Safe, affordable rides for students & staff",
     template: "%s | UniPool",
   },
   description:

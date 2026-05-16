@@ -86,7 +86,7 @@ export default function Home() {
       <main className="flex-1 p-4 md:p-8 space-y-12 overflow-y-auto w-full">
 
         {/* Hero Section */}
-        <div className="relative h-[550px] md:h-[500px] w-full overflow-hidden bg-zinc-950 flex items-center rounded-3xl p-6 md:p-10 shadow-lg group">
+        <div className="relative h-[500px] md:h-[500px] w-full overflow-hidden bg-zinc-950 flex items-center rounded-3xl p-6 md:p-10 shadow-lg group">
           <div className="absolute top-0 right-0 w-full md:w-[70%] h-full z-0">
             <video
               autoPlay
@@ -104,7 +104,7 @@ export default function Home() {
           <div className="relative z-10 space-y-5 max-w-3xl mt-8 md:mt-0">
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-3 py-1 rounded-full text-sm font-medium border border-white/10 text-white">
               <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-              Officially launched at NIT Delhi · Android APK available
+              Officially launched at NIT Delhi · APK available
             </div>
 
             <div className="space-y-3">
