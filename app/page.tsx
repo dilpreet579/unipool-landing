@@ -9,6 +9,7 @@ import { ShieldCheck, Zap, HandCoins, Users, Plus, Heart, MessageSquare } from "
 import { Footer } from "@/components/Footer";
 import { WaitlistForm } from "@/components/WaitlistForm";
 import { AppPreview } from "@/components/AppPreview";
+import { Features } from "@/components/Features";
 import { APK_URL, HAS_APK_URL, getApkAbsoluteUrl } from "@/lib/apk";
 import { useOS } from "@/hooks/use-os";
 
@@ -233,37 +234,7 @@ export default function Home() {
         </div>
 
         {/* Features */}
-        <div id="features" className="space-y-8 py-12 max-w-6xl mx-auto w-full">
-          <div className="text-center space-y-4 max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-5xl font-bold text-zinc-900 dark:text-white tracking-tight">
-              What the app does.
-            </h2>
-            <p className="text-xl text-zinc-600 dark:text-zinc-400">
-              Practical features for everyday commuting within your institution.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {[
-              { icon: Zap, title: "Find Travel Companions", desc: "See who's heading your way - to the metro, station, airport, or anywhere off campus. Filter by time or fare." },
-              { icon: MessageSquare, title: "Coordinate Over Chat", desc: "Sort out pickup points and timings in the app. No need to share personal phone numbers." },
-              { icon: ShieldCheck, title: "Verified Members Only", desc: "Everyone uses an institutional email. You only ever travel with verified students, faculty, or staff." },
-              { icon: HandCoins, title: "Split the Fare Fairly", desc: "The organiser sets a per-seat amount. You see it before joining - no surprises, no platform cut." },
-              { icon: Heart, title: "Pink Mode", desc: "Women can coordinate trips exclusively with other women - available as a filter when posting or searching." },
-              { icon: Users, title: "Open to the Whole Campus", desc: "Students, faculty, and staff can all use UniPool. More members means easier ride matching." }
-            ].map((f, i) => (
-              <Card key={i} className="rounded-2xl shadow-sm border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900">
-                <div className="p-5 space-y-3">
-                  <div className="bg-zinc-100 dark:bg-zinc-800 w-9 h-9 rounded-full flex items-center justify-center">
-                    <f.icon className="w-4 h-4 text-zinc-900 dark:text-white" />
-                  </div>
-                  <p className="font-semibold text-sm text-zinc-900 dark:text-white">{f.title}</p>
-                  <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">{f.desc}</p>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
+        <Features />
 
         {/* How It Works */}
         <div className="max-w-6xl mx-auto w-full">
