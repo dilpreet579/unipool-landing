@@ -24,16 +24,16 @@ export function Footer() {
               </h2>
             </div>
             <p className="text-sm text-zinc-500 dark:text-zinc-400 max-w-xs">
-              Campus rides, simplified. Built by students, for students.
+              A campus ride-sharing platform for students, faculty, and staff. Officially launched at NIT Delhi.
             </p>
-            <div className="pt-4 text-xs text-zinc-400 dark:text-zinc-500">
+            <div className="pt-2 text-xs text-zinc-400 dark:text-zinc-500">
               © {currentYear} UniPool. <br /> All rights reserved.
             </div>
           </div>
 
-          {/* Column 2: Important Links */}
+          {/* Column 2: Links */}
           <div className="space-y-4">
-            <h3 className="font-bold text-zinc-900 dark:text-white">Important Links</h3>
+            <h3 className="font-bold text-zinc-900 dark:text-white">Links</h3>
             <ul className="space-y-2 text-sm">
               {/*<li>
                 <Link

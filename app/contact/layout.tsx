@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Us",
+  title: "Get in Touch",
   description:
-    "Have a question, feedback, or partnership idea? Get in touch with the UniPool team. We're happy to help.",
+    "Have a question about UniPool, a bug to report, or want to bring the platform to your institution? Reach out to the team.",
   alternates: {
     canonical: "https://www.unipool.dev/contact",
   },
   openGraph: {
-    title: "Contact Us | UniPool",
+    title: "Get in Touch | UniPool",
     description:
-      "Have a question, feedback, or partnership idea? Get in touch with the UniPool team.",
+      "Contact the UniPool team - questions, feedback, or enquiries about bringing UniPool to your campus.",
     url: "https://www.unipool.dev/contact",
   },
 };

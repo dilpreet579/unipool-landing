@@ -21,11 +21,11 @@ export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
 
   title: {
-    default: "UniPool — Campus Rides, Without the Hassle",
+    default: "UniPool | Ride Sharing for University Students",
     template: "%s | UniPool",
   },
   description:
-    "UniPool connects university students for safe, affordable carpooling. Download the free Android APK. Zero platform fees, university email verified.",
+    "UniPool lets university students share rides to and from campus. Launched at NIT Delhi. Free Android APK available now. Play Store and App Store versions coming soon.",
   keywords: [
     "carpooling",
     "university students",
@@ -36,6 +36,12 @@ export const metadata: Metadata = {
     "affordable rides",
     "India",
     "NIT Delhi",
+    "NIT Delhi ride sharing",
+    "campus commute",
+    "faculty ride sharing",
+    "Pink Mode",
+    "women only rides",
+    "student safety",
   ],
   authors: [{ name: "UniPool", url: BASE_URL }],
   creator: "UniPool",
@@ -61,24 +67,24 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: BASE_URL,
     siteName: "UniPool",
-    title: "UniPool — Campus Rides, Without the Hassle",
+    title: "UniPool — Ride Sharing for University Students",
     description:
-      "UniPool connects university students for safe, affordable carpooling. Download the free Android APK. Zero platform fees, university email verified.",
+      "UniPool lets university students share rides to and from campus. Launched at NIT Delhi. Free Android APK available now. No platform fees.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "UniPool — Campus rides, without the hassle.",
+        alt: "UniPool — Ride sharing for university students, launched at NIT Delhi.",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "UniPool — Campus Rides, Without the Hassle",
+    title: "UniPool — Ride Sharing for University Students",
     description:
-      "UniPool connects university students for safe, affordable carpooling. Free to download. Zero platform fees.",
+      "UniPool lets university students share rides to and from campus. Free to download. No platform fees.",
     images: ["/og-image.png"],
   },
 

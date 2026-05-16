@@ -5,7 +5,7 @@ import QRCode from "react-qr-code";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { ShieldCheck, Zap, HandCoins, Users, Plus } from "lucide-react";
+import { ShieldCheck, Zap, HandCoins, Users, Plus, Heart, MessageSquare } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { WaitlistForm } from "@/components/WaitlistForm";
 import { APK_URL, HAS_APK_URL, getApkAbsoluteUrl } from "@/lib/apk";
@@ -19,23 +19,31 @@ export default function Home() {
   const faqs = [
     {
       question: "Who can use UniPool?",
-      answer: "UniPool is exclusively for university students. You sign up using your university email address, which is verified before you can access the app. This keeps the community safe and trustworthy."
+      answer: "UniPool is open to students, faculty, and staff at participating universities. You register with your institutional email address, which we verify before giving you access. That one step is what keeps the community limited to people from your campus."
     },
     {
-      question: "Is UniPool free to use?",
-      answer: "The app is completely free to download and use. There are zero platform fees. Hosts set their own fare and passengers pay that amount directly — UniPool takes nothing from the transaction."
+      question: "Is there any charge to use the app?",
+      answer: "No. The app is free to download and there are no platform fees. The driver sets a fare to cover fuel costs, and the passenger pays that amount directly. UniPool does not take any cut from the transaction."
     },
     {
-      question: "How do I install the APK?",
-      answer: "Download the APK from this page, open it on your Android device, and allow installation from unknown sources if prompted. The whole process takes under a minute. iOS and Play Store versions are coming soon."
+      question: "How do I install the APK on my Android phone?",
+      answer: "Download the APK file from this page and open it on your Android device. Your phone may ask you to allow installation from unknown sources — just tap Allow. The whole thing takes under a minute. If you're on iOS, you can join the waitlist and we'll notify you when the App Store version is ready."
     },
     {
-      question: "Is it safe to ride with strangers?",
-      answer: "All users are verified students from your university. Every ride is rated, profiles are visible within the community, and in-app chat keeps all communication traceable. There's also a female-only ride filter for added comfort."
+      question: "How do I know it's safe to share a ride with someone?",
+      answer: "Everyone on the platform is a verified member of your institution — students, faculty, or staff. Profiles are visible to all community members, rides are rated after completion, and all coordination happens through the in-app chat. There is also a Pink Mode (women-only ride option) available for additional comfort."
     },
     {
-      question: "When will Play Store & App Store versions launch?",
-      answer: "We're actively working on both. The Google Play Store and Apple App Store versions are coming very soon. Join the waitlist and we'll notify you the moment they go live."
+      question: "What is Pink Mode?",
+      answer: "Pink Mode lets women request or offer rides exclusively among women on the platform. It's a filter within the app that any woman can use when posting or searching for a ride."
+    },
+    {
+      question: "When will the Google Play Store and Apple App Store versions be available?",
+      answer: "Both are currently in progress. Join the waitlist below and we'll send you an email the moment either goes live."
+    },
+    {
+      question: "Which university launched UniPool?",
+      answer: "UniPool was officially launched at NIT Delhi, inaugurated at the Director's office. We are now looking to onboard other institutions — if you'd like UniPool at your campus, reach out to us through the Contact page."
     }
   ];
 
@@ -51,7 +59,7 @@ export default function Home() {
             applicationCategory: "TransportationApplication",
             operatingSystem: "Android",
             description:
-              "UniPool connects university students for safe, affordable carpooling. Zero platform fees, university email verified.",
+              "UniPool is a campus ride-sharing platform for students, faculty, and staff. Officially launched at NIT Delhi. Free Android APK. No platform fees.",
             offers: {
               "@type": "Offer",
               price: "0",
@@ -86,24 +94,24 @@ export default function Home() {
           </div>
           <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-zinc-950 from-40% md:from-30% via-zinc-950/80 via-70% md:via-60% to-transparent z-1 pointer-events-none" />
 
-          <div className="relative z-10 space-y-6 max-w-2xl mt-8 md:mt-0">
+          <div className="relative z-10 space-y-5 max-w-3xl mt-8 md:mt-0">
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-3 py-1 rounded-full text-sm font-medium border border-white/10 text-white">
               <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-              APK Early Access — Free to download
+              Officially launched at NIT Delhi · Android APK available
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-3">
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white leading-tight">
-                Campus rides, <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-200 to-zinc-500">without the hassle.</span>
+                Share rides with <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-200 to-zinc-500">your campus community.</span>
               </h1>
-              <p className="text-zinc-400 text-base sm:text-lg md:text-xl max-w-lg">
-                UniPool connects university students for safe, affordable carpooling. Split costs, reduce emissions, make your commute something you actually enjoy.
+              <p className="text-zinc-300 text-base sm:text-lg max-w-lg">
+                A ride-sharing app for NIT Delhi — find a ride to campus, or offer your empty seats to colleagues. Split the cost, travel safely.
               </p>
-              <p className="text-sm text-zinc-500">Free to use · University students only · Android</p>
+              <p className="text-sm text-zinc-500">Free · Verified members only · Android</p>
             </div>
 
-            <div className="pt-2 flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4">
               {os === "ios" ? (
                 <Button
                   asChild
@@ -152,7 +160,7 @@ export default function Home() {
                     <div className="space-y-1">
                       <p className="text-sm font-semibold">Scan on your phone</p>
                       <p className="text-xs text-muted-foreground">
-                        Downloads the UniPool APK.
+                        Downloads the UniPool APK directly.
                       </p>
                     </div>
                     <div className="mx-auto w-fit rounded-xl bg-white p-3">
@@ -173,10 +181,10 @@ export default function Home() {
         <div className="max-w-6xl mx-auto w-full px-2 sm:px-0">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 py-8 border-y border-zinc-200 dark:border-zinc-800">
             {[
-              { stat: "₹0", label: "Platform fee" },
-              { stat: "2 min", label: "To post a ride" },
-              { stat: "100%", label: "Student verified" },
-              { stat: "Real-time", label: "Chat & updates" }
+              { stat: "₹0", label: "Platform fee, ever" },
+              { stat: "2 min", label: "To post your ride" },
+              { stat: "100%", label: "Institutionally verified" },
+              { stat: "NIT Delhi", label: "First campus to launch" }
             ].map((item, i) => (
               <div key={i} className="text-center space-y-1">
                 <p className="text-2xl sm:text-3xl font-extrabold text-zinc-900 dark:text-white">{item.stat}</p>
@@ -186,23 +194,58 @@ export default function Home() {
           </div>
         </div>
 
+        {/* Institutional Trust Section */}
+        <div className="max-w-6xl mx-auto w-full">
+          <div className="rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-6 md:p-10 space-y-8 shadow-sm">
+            <div className="space-y-2 max-w-2xl">
+              <p className="text-xs font-semibold uppercase tracking-widest text-zinc-400 dark:text-zinc-500">About the project</p>
+              <h2 className="text-2xl md:text-3xl font-bold text-zinc-900 dark:text-white tracking-tight">
+                Built at NIT Delhi, for NIT Delhi.
+              </h2>
+              <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                UniPool helps students, faculty, and staff find and share rides to and from campus — splitting fuel costs and avoiding overpaying for autos and cabs. It is a campus project developed by students of the Department of Computer Science &amp; Engineering at NIT Delhi, officially inaugurated at the Director&apos;s office and publicly recognised by the official NIT Delhi LinkedIn handle.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2 border-t border-zinc-100 dark:border-zinc-800">
+              <div className="space-y-3">
+                <p className="text-xs font-semibold uppercase tracking-widest text-zinc-400 dark:text-zinc-500">Developed by</p>
+                <ul className="space-y-1 text-sm text-zinc-700 dark:text-zinc-300">
+                  <li>Dilpreet Singh <span className="text-zinc-400 dark:text-zinc-500">(231210041)</span></li>
+                  <li>Ishita Gupta <span className="text-zinc-400 dark:text-zinc-500">(231210050)</span></li>
+                  <li>Madhav Raj <span className="text-zinc-400 dark:text-zinc-500">(231210064)</span></li>
+                </ul>
+              </div>
+              <div className="space-y-3">
+                <p className="text-xs font-semibold uppercase tracking-widest text-zinc-400 dark:text-zinc-500">Under the guidance of</p>
+                <div className="text-sm text-zinc-700 dark:text-zinc-300 space-y-0.5">
+                  <p className="font-semibold">Dr. Karan Verma</p>
+                  <p className="text-zinc-500 dark:text-zinc-400">Dept. of Computer Science &amp; Engineering</p>
+                  <p className="text-zinc-500 dark:text-zinc-400">NIT Delhi</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Features */}
         <div id="features" className="space-y-8 py-12 max-w-6xl mx-auto w-full">
           <div className="text-center space-y-4 max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-5xl font-bold text-zinc-900 dark:text-white tracking-tight">
-              Everything you need. Nothing you don&apos;t.
+              What the app does.
             </h2>
             <p className="text-xl text-zinc-600 dark:text-zinc-400">
-              Designed for campus life — lightweight, fast, and student-first from the ground up.
+              Practical features for everyday commuting within your institution.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
-              { icon: Zap, title: "Discover Nearby Rides", desc: "Browse rides departing within 5km of you. Filter by price, time, or female-only preference." },
-              { icon: Users, title: "In-App Chat", desc: "Coordinate directly with your driver or passengers. No numbers shared, everything in one place." },
-              { icon: ShieldCheck, title: "Verified Students Only", desc: "University email verification keeps the community safe and trustworthy. No outsiders, ever." },
-              { icon: HandCoins, title: "Transparent Fares", desc: "Hosts set their own price. You see the fare upfront — no surge pricing, no hidden fees." }
+              { icon: Zap, title: "Find Rides Near You", desc: "See rides starting within 5 km of your location. Filter by time, price, or use Pink Mode to find women-only rides." },
+              { icon: MessageSquare, title: "Chat Inside the App", desc: "Message your driver or co-passengers directly in the app. No need to share personal phone numbers." },
+              { icon: ShieldCheck, title: "Verified Members Only", desc: "Everyone signs up with an institutional email. You're only ever sharing rides with verified students, faculty, or staff from your campus." },
+              { icon: HandCoins, title: "Driver Sets the Price", desc: "The driver sets a fare to cover fuel. You see the exact amount before requesting — no hidden charges, no surge pricing." },
+              { icon: Heart, title: "Pink Mode", desc: "A dedicated option for women to find or offer rides exclusively among women on the platform. Available as a filter when posting or searching." },
+              { icon: Users, title: "Open to the Whole Campus", desc: "Not just students — faculty and institute staff can register and use UniPool too, keeping the community broad and useful." }
             ].map((f, i) => (
               <Card key={i} className="rounded-3xl shadow-sm border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900">
                 <CardHeader>
@@ -224,27 +267,27 @@ export default function Home() {
           <div id="how-it-works" className="space-y-6 md:space-y-8 py-8 md:py-12 rounded-3xl bg-zinc-900 text-white p-6 md:p-12 shadow-lg my-8 md:my-12">
             <div className="space-y-4 max-w-3xl">
               <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
-                From signup to shared ride in minutes.
+                Getting started takes about two minutes.
               </h2>
               <p className="text-xl text-zinc-400">
-                Three steps and you&apos;re moving. UniPool gets out of your way.
+                Three steps to your first shared ride.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-8 border-t border-white/10">
               <div className="space-y-4">
                 <p className="text-5xl font-black text-white/20">01</p>
-                <h3 className="text-xl font-bold">Create your student account</h3>
-                <p className="text-zinc-400">Sign up with your university email. Verify, set up your profile, done — under 2 minutes.</p>
+                <h3 className="text-xl font-bold">Sign up with your institutional email</h3>
+                <p className="text-zinc-400">Create an account using your NIT Delhi email. We verify it to confirm you belong to the institution, then you&apos;re in.</p>
               </div>
               <div className="space-y-4">
                 <p className="text-5xl font-black text-white/20">02</p>
-                <h3 className="text-xl font-bold">Browse or publish a ride</h3>
-                <p className="text-zinc-400">Find rides near you on the map, or post your own route as a host and set your fare.</p>
+                <h3 className="text-xl font-bold">Find a ride or offer one</h3>
+                <p className="text-zinc-400">Look for rides heading your way, or post your own route with a seat count and fare. Takes under two minutes to set up.</p>
               </div>
               <div className="space-y-4">
                 <p className="text-5xl font-black text-white/20">03</p>
-                <h3 className="text-xl font-bold">Request, chat, and go</h3>
-                <p className="text-zinc-400">Request a seat, coordinate over chat, head out. Rate each other when you arrive.</p>
+                <h3 className="text-xl font-bold">Request, confirm, and go</h3>
+                <p className="text-zinc-400">Send a ride request, sort out details over in-app chat, and head out together. Rate each other once you arrive.</p>
               </div>
             </div>
           </div>
@@ -253,8 +296,8 @@ export default function Home() {
         {/* FAQ Area */}
         <div id="faq" className="py-12 max-w-4xl mx-auto space-y-8 w-full">
           <div className="text-center space-y-4">
-            <h2 className="text-3xl md:text-5xl font-bold text-zinc-900 dark:text-white tracking-tight">Questions answered.</h2>
-            <p className="text-xl text-zinc-600 dark:text-zinc-400">Everything you need to know before your first ride.</p>
+            <h2 className="text-3xl md:text-5xl font-bold text-zinc-900 dark:text-white tracking-tight">Common questions.</h2>
+            <p className="text-xl text-zinc-600 dark:text-zinc-400">Answers to what students, parents, and faculty usually ask.</p>
           </div>
           <div className="space-y-4">
             {faqs.map((faq, index) => (
@@ -289,11 +332,11 @@ export default function Home() {
         {/* CTA Section */}
         <div className="max-w-6xl mx-auto w-full px-4 sm:px-0">
           <div id="download" className="py-12 sm:py-16 text-center space-y-8 bg-zinc-100 dark:bg-zinc-900 rounded-3xl p-6 sm:p-12 shadow-sm border border-zinc-200 dark:border-zinc-800">
-            
+
             {/* APK Download */}
             <div className="space-y-4 max-w-2xl mx-auto">
-              <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold tracking-tight text-zinc-900 dark:text-white pb-2">Ready to ride smarter?</h2>
-              <p className="text-lg sm:text-xl text-zinc-600 dark:text-zinc-400">Download the APK now. Available on Android — free forever.</p>
+              <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold tracking-tight text-zinc-900 dark:text-white pb-2">Try it on Android today.</h2>
+              <p className="text-lg sm:text-xl text-zinc-600 dark:text-zinc-400">Download the APK directly - no app store needed. Free, with no account charges.</p>
               <div className="flex justify-center pt-2">
                 {HAS_APK_URL ? (
                   <Button
@@ -327,8 +370,8 @@ export default function Home() {
             {/* Waitlist */}
             <div id="waitlist" className="space-y-4 max-w-xl mx-auto">
               <div className="space-y-1">
-                <h3 className="text-xl sm:text-2xl font-bold text-zinc-900 dark:text-white">Get notified for Play Store & App Store</h3>
-                <p className="text-zinc-500 dark:text-zinc-400 text-sm sm:text-base">Join the waitlist and be first to know when we launch.</p>
+                <h3 className="text-xl sm:text-2xl font-bold text-zinc-900 dark:text-white">Get notified when we launch on Play Store &amp; App Store</h3>
+                <p className="text-zinc-500 dark:text-zinc-400 text-sm sm:text-base">Leave your email and we&apos;ll reach out the moment either version goes live. No spam.</p>
               </div>
               <WaitlistForm />
             </div>

@@ -83,19 +83,19 @@ export default function ContactPage() {
         {/* Header */}
         <div className="text-center space-y-4 mb-10 max-w-xl">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-zinc-900 dark:text-white">
-            Contact Us
+            Get in Touch
           </h1>
           <p className="text-lg text-zinc-600 dark:text-zinc-400">
-            Have a question, feedback, or partnership idea? We&apos;d love to hear from you. Fill out the form and we&apos;ll respond as soon as possible.
+            Have a question about the app, a bug to report, or want to bring UniPool to your institution? Fill out the form and we&apos;ll get back to you.
           </p>
         </div>
 
         {/* Form Card */}
         <Card className="w-full max-w-lg rounded-3xl border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 shadow-sm">
           <CardHeader className="pb-2">
-            <CardTitle className="text-xl text-zinc-900 dark:text-white">Send a message</CardTitle>
+            <CardTitle className="text-xl text-zinc-900 dark:text-white">Send us a message</CardTitle>
             <CardDescription className="text-zinc-500 dark:text-zinc-400">
-              All fields are required.
+              All fields are required. We typically respond within a day or two.
             </CardDescription>
           </CardHeader>
           <CardContent className="pt-2">
