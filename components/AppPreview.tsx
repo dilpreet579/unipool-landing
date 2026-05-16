@@ -65,7 +65,7 @@ export function AppPreview() {
   }
 
   return (
-    <section id="app-preview" className="py-12 max-w-6xl mx-auto w-full space-y-8">
+    <section id="app-preview" className="py-10 max-w-6xl mx-auto w-full space-y-6">
       {/* Header */}
       <div className="flex items-end justify-between gap-4 px-1">
         <div className="space-y-2 max-w-xl">
@@ -76,7 +76,7 @@ export function AppPreview() {
             What you&apos;ll see when you open it.
           </h2>
           <p className="text-zinc-600 dark:text-zinc-400">
-            A quick look at the main screens — no sign-up needed to browse.
+            A quick look at the main screens.
           </p>
         </div>
 

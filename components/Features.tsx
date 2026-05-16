@@ -2,7 +2,7 @@ import { Zap, MessageSquare, ShieldCheck, HandCoins, Heart, Users } from "lucide
 
 export function Features() {
   return (
-    <section id="features" className="py-12 max-w-6xl mx-auto w-full space-y-6">
+    <section id="features" className="py-10 max-w-6xl mx-auto w-full space-y-6">
       {/* Header */}
       <div className="space-y-2">
         <p className="text-xs font-semibold uppercase tracking-widest text-zinc-400 dark:text-zinc-500">
@@ -17,7 +17,7 @@ export function Features() {
       <div className="grid grid-cols-1 md:grid-cols-6 gap-4 auto-rows-auto">
 
         {/* Row 1 — hero card (4/6) + dark accent card (2/6) */}
-        <div className="md:col-span-4 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-7 flex flex-col gap-5">
+        <div className="md:col-span-4 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-6 flex flex-col gap-5">
           <div className="w-10 h-10 rounded-full bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center shrink-0">
             <Zap className="w-5 h-5 text-zinc-900 dark:text-white" />
           </div>
@@ -41,7 +41,7 @@ export function Features() {
           </div>
         </div>
 
-        <div className="md:col-span-2 rounded-2xl bg-zinc-950 border border-zinc-800 p-7 flex flex-col gap-5">
+        <div className="md:col-span-2 rounded-2xl bg-zinc-950 border border-zinc-800 p-6 flex flex-col gap-5">
           <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center shrink-0">
             <ShieldCheck className="w-5 h-5 text-white" />
           </div>
@@ -55,7 +55,7 @@ export function Features() {
         </div>
 
         {/* Row 2 — three equal cards */}
-        <div className="md:col-span-2 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-6 flex flex-col gap-4">
+        <div className="md:col-span-2 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-5 flex flex-col gap-4">
           <div className="w-10 h-10 rounded-full bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center shrink-0">
             <MessageSquare className="w-5 h-5 text-zinc-900 dark:text-white" />
           </div>
@@ -67,7 +67,7 @@ export function Features() {
           </div>
         </div>
 
-        <div className="md:col-span-2 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-6 flex flex-col gap-4">
+        <div className="md:col-span-2 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-5 flex flex-col gap-4">
           <div className="w-10 h-10 rounded-full bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center shrink-0">
             <HandCoins className="w-5 h-5 text-zinc-900 dark:text-white" />
           </div>
@@ -80,7 +80,7 @@ export function Features() {
         </div>
 
         {/* Pink Mode — accent tint */}
-        <div className="md:col-span-2 rounded-2xl border border-pink-200 dark:border-pink-900/50 bg-pink-50 dark:bg-pink-950/20 p-6 flex flex-col gap-4">
+        <div className="md:col-span-2 rounded-2xl border border-pink-200 dark:border-pink-900/50 bg-pink-50 dark:bg-pink-950/20 p-5 flex flex-col gap-4">
           <div className="w-10 h-10 rounded-full bg-pink-100 dark:bg-pink-900/40 flex items-center justify-center shrink-0">
             <Heart className="w-5 h-5 text-pink-600 dark:text-pink-400" />
           </div>
@@ -93,7 +93,7 @@ export function Features() {
         </div>
 
         {/* Row 3 — full-width horizontal banner */}
-        <div className="md:col-span-6 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-6 flex flex-col sm:flex-row items-start sm:items-center gap-5">
+        <div className="md:col-span-6 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-5 flex flex-col sm:flex-row items-start sm:items-center gap-5">
           <div className="w-10 h-10 rounded-full bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center shrink-0">
             <Users className="w-5 h-5 text-zinc-900 dark:text-white" />
           </div>

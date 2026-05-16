@@ -109,8 +109,8 @@ export default function Home() {
 
             <div className="space-y-3">
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white leading-tight">
-                Share rides with <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-200 to-zinc-500">your campus community.</span>
+                Share the ride. Split the fare. <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-200 to-zinc-500">Travel together.</span>
               </h1>
               <p className="text-zinc-300 text-base sm:text-lg max-w-lg">
                 Find people heading your way, share a cab or auto together, and split the fare. No vehicle needed - just a destination.
@@ -186,11 +186,11 @@ export default function Home() {
 
         {/* Proof Strip */}
         <div className="max-w-6xl mx-auto w-full px-2 sm:px-0">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 py-8 border-y border-zinc-200 dark:border-zinc-800">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 py-6 border-y border-zinc-200 dark:border-zinc-800">
             {[
               { stat: "₹0", label: "Platform fee, ever" },
               { stat: "2 min", label: "To post your ride" },
-              { stat: "100%", label: "Institutionally verified" },
+              { stat: "Verified", label: "Institutional email required" },
               { stat: "NIT Delhi", label: "First campus to launch" }
             ].map((item, i) => (
               <div key={i} className="text-center space-y-1">
@@ -203,7 +203,7 @@ export default function Home() {
 
         {/* About the Project */}
         <div className="max-w-6xl mx-auto w-full">
-          <div className="rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-6 md:p-10 space-y-8 shadow-sm">
+          <div className="rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-6 md:p-8 space-y-6 shadow-sm">
             <div className="space-y-2 max-w-2xl">
               <p className="text-xs font-semibold uppercase tracking-widest text-zinc-400 dark:text-zinc-500">About the project</p>
               <h2 className="text-2xl md:text-3xl font-bold text-zinc-900 dark:text-white tracking-tight">
@@ -239,7 +239,7 @@ export default function Home() {
 
         {/* How It Works */}
         <div className="max-w-6xl mx-auto w-full">
-          <div id="how-it-works" className="space-y-6 md:space-y-8 py-8 md:py-12 rounded-3xl bg-zinc-900 text-white p-6 md:p-12 shadow-lg my-8 md:my-12">
+          <div id="how-it-works" className="space-y-6 md:space-y-8 py-8 md:py-10 rounded-3xl bg-zinc-900 text-white p-6 md:p-10 shadow-lg my-8 md:my-10">
             <div className="space-y-4 max-w-3xl">
               <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
                 Getting started takes about two minutes.
@@ -275,7 +275,7 @@ export default function Home() {
         <OfficialLaunch />
 
         {/* FAQ Area */}
-        <div id="faq" className="py-12 max-w-4xl mx-auto space-y-8 w-full">
+        <div id="faq" className="py-10 max-w-4xl mx-auto space-y-8 w-full">
           <div className="text-center space-y-4">
             <h2 className="text-3xl md:text-5xl font-bold text-zinc-900 dark:text-white tracking-tight">Common questions.</h2>
             <p className="text-xl text-zinc-600 dark:text-zinc-400">Answers to what students, parents, and faculty usually ask.</p>
@@ -312,7 +312,7 @@ export default function Home() {
 
         {/* CTA Section */}
         <div className="max-w-6xl mx-auto w-full px-4 sm:px-0">
-          <div id="download" className="py-12 sm:py-16 text-center space-y-8 bg-zinc-100 dark:bg-zinc-900 rounded-3xl p-6 sm:p-12 shadow-sm border border-zinc-200 dark:border-zinc-800">
+          <div id="download" className="py-10 sm:py-12 text-center space-y-6 bg-zinc-100 dark:bg-zinc-900 rounded-3xl p-6 sm:p-10 shadow-sm border border-zinc-200 dark:border-zinc-800">
 
             {/* APK Download */}
             <div className="space-y-4 max-w-2xl mx-auto">
